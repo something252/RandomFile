@@ -10,10 +10,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Random Folder")> 
-<Assembly: AssemblyDescription("Randomly roll for files and folders in user specified directories.")> 
-<Assembly: AssemblyCompany("David Plesnarski")> 
-<Assembly: AssemblyProduct("Random Folder")> 
+<Assembly: AssemblyTitle("Random File")> 
+<Assembly: AssemblyDescription("Randomly roll for files and folders in user specified directories.")>
+<Assembly: AssemblyCompany("David Plesnarski")>
+<Assembly: AssemblyProduct("Random File")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.9.5.0")> 
-<Assembly: AssemblyFileVersion("4.9.5.0")> 
+<Assembly: AssemblyVersion("4.9.8.0")> 
+<Assembly: AssemblyFileVersion("4.9.8.0")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("en-US")> 

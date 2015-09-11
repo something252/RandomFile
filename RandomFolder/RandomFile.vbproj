@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8FFA4FB1-223B-4C78-ABA6-FDF06ADED463}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>RandomFolder.My.MyApplication</StartupObject>
-    <RootNamespace>RandomFolder</RootNamespace>
-    <AssemblyName>Random Folder</AssemblyName>
+    <StartupObject>RandomFile.My.MyApplication</StartupObject>
+    <RootNamespace>RandomFile</RootNamespace>
+    <AssemblyName>Random File</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -39,12 +39,13 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Random Folder.xml</DocumentationFile>
+    <DocumentationFile>Random File.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42032,42036</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <Optimize>false</Optimize>
     <Prefer32Bit>true</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,7 +54,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Random Folder.xml</DocumentationFile>
+    <DocumentationFile>Random File.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42032,42036</NoWarn>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
@@ -129,6 +130,12 @@
     <Compile Include="About.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FavoritesList.Designer.vb">
+      <DependentUpon>FavoritesList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritesList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FileTree.vb" />
     <Compile Include="FileTypesForm.Designer.vb">
       <DependentUpon>FileTypesForm.vb</DependentUpon>
@@ -147,11 +154,11 @@
     <Compile Include="ParentFolders.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RandomFolder.vb">
+    <Compile Include="RandomFile.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RandomFolder.Designer.vb">
-      <DependentUpon>RandomFolder.vb</DependentUpon>
+    <Compile Include="RandomFile.Designer.vb">
+      <DependentUpon>RandomFile.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Rules.Designer.vb">
@@ -188,6 +195,9 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FavoritesList.resx">
+      <DependentUpon>FavoritesList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FileTypesForm.resx">
       <DependentUpon>FileTypesForm.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -195,8 +205,8 @@
     <EmbeddedResource Include="ParentFolders.resx">
       <DependentUpon>ParentFolders.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RandomFolder.resx">
-      <DependentUpon>RandomFolder.vb</DependentUpon>
+    <EmbeddedResource Include="RandomFile.resx">
+      <DependentUpon>RandomFile.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

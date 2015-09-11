@@ -9,7 +9,7 @@
             locked = True
 
             If Not TextChangedCheck.Text = RichTextBox1.Text Then ' changes were made to whitelist
-                RandomFolder.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
+                RandomFile.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
                 Dim str = RichTextBox1.Text
                 str = str.Replace(" ", "")
                 str = str.Replace(".", "")
@@ -29,7 +29,7 @@
             End If
 
             If Not TextChangedCheck2.Text = RichTextBox2.Text Then ' changes were made to blacklist
-                RandomFolder.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
+                RandomFile.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
                 Dim str = RichTextBox2.Text
                 str = str.Replace(" ", "")
                 str = str.Replace(".", "")
@@ -111,25 +111,25 @@
         If WhitelistEnabledButton.Text = "ENABLED" Then
             WhitelistEnabledToggle("DISABLED")
             My.Settings.WhitelistEnabled = False
-            RandomFolder.WhitelistToolStripMenuItem.Checked = False
+            RandomFile.WhitelistToolStripMenuItem.Checked = False
         Else
             WhitelistEnabledToggle("ENABLED")
             My.Settings.WhitelistEnabled = True
-            RandomFolder.WhitelistToolStripMenuItem.Checked = True
+            RandomFile.WhitelistToolStripMenuItem.Checked = True
         End If
-        RandomFolder.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
+        RandomFile.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
     End Sub
     Private Sub BlacklistEnabledButton_Click(sender As Object, e As EventArgs) Handles BlacklistEnabledButton.Click
         If BlacklistEnabledButton.Text = "ENABLED" Then
             BlacklistEnabledToggle("DISABLED")
             My.Settings.BlacklistEnabled = False
-            RandomFolder.BlacklistToolStripMenuItem.Checked = False
+            RandomFile.BlacklistToolStripMenuItem.Checked = False
         Else
             BlacklistEnabledToggle("ENABLED")
             My.Settings.BlacklistEnabled = True
-            RandomFolder.BlacklistToolStripMenuItem.Checked = True
+            RandomFile.BlacklistToolStripMenuItem.Checked = True
         End If
-        RandomFolder.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
+        RandomFile.RecomputeTreesChangesWereMade = True ' recompute file tree(s)
     End Sub
 
     Sub WhitelistEnabledToggle(str As String)

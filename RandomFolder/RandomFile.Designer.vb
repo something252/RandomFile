@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class RandomFolder
+Partial Class RandomFile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class RandomFolder
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RandomFolder))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RandomFile))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.RollButton = New System.Windows.Forms.Button()
         Me.ResultBox = New System.Windows.Forms.TextBox()
@@ -44,18 +44,21 @@ Partial Class RandomFolder
         Me.RollCandidatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FoldersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LegendaryRollsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.YesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LegendaryDelayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.YesToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MultipleFoldersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.YesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RollExecuteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.YesToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RollRulesEnabledToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YesToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LegendaryRollsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LegendaryDelayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YesToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateShortcutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.YesToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NoToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
@@ -148,12 +151,13 @@ Partial Class RandomFolder
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ClearOutputFolderButton = New System.Windows.Forms.Button()
         Me.OpenContainingFolderButton = New System.Windows.Forms.Button()
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.SaveShortcutButton = New System.Windows.Forms.Button()
         Me.FavoriteButton = New System.Windows.Forms.Button()
-        Me.FavoritePictureBox = New System.Windows.Forms.PictureBox()
         Me.IgnoreRollButton = New System.Windows.Forms.Button()
         Me.ClearRollOnceListButton = New System.Windows.Forms.Button()
+        Me.FavoritesListButton = New System.Windows.Forms.Button()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.FavoritePictureBox = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalWeight = New System.Windows.Forms.TextBox()
@@ -335,7 +339,7 @@ Partial Class RandomFolder
         '
         'OptionsToolStripMenuItem
         '
-        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RollCandidatesToolStripMenuItem, Me.MultipleFoldersToolStripMenuItem, Me.RollExecuteToolStripMenuItem, Me.LegendaryRollsToolStripMenuItem, Me.LegendaryDelayToolStripMenuItem, Me.CreateShortcutsToolStripMenuItem, Me.AlreadyRolledFilterToolStripMenuItem, Me.FiltersEnabledToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RollCandidatesToolStripMenuItem, Me.MultipleFoldersToolStripMenuItem, Me.RollExecuteToolStripMenuItem, Me.RollRulesEnabledToolStripMenuItem, Me.LegendaryRollsToolStripMenuItem, Me.LegendaryDelayToolStripMenuItem, Me.CreateShortcutsToolStripMenuItem, Me.AlreadyRolledFilterToolStripMenuItem, Me.FiltersEnabledToolStripMenuItem})
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.OptionsToolStripMenuItem.Text = "Options"
@@ -360,6 +364,69 @@ Partial Class RandomFolder
         Me.FilesToolStripMenuItem.Name = "FilesToolStripMenuItem"
         Me.FilesToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
         Me.FilesToolStripMenuItem.Text = "Files"
+        '
+        'MultipleFoldersToolStripMenuItem
+        '
+        Me.MultipleFoldersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem1, Me.NoToolStripMenuItem1})
+        Me.MultipleFoldersToolStripMenuItem.Name = "MultipleFoldersToolStripMenuItem"
+        Me.MultipleFoldersToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.MultipleFoldersToolStripMenuItem.Text = "Multiple Folders?"
+        '
+        'YesToolStripMenuItem1
+        '
+        Me.YesToolStripMenuItem1.Checked = True
+        Me.YesToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.YesToolStripMenuItem1.Name = "YesToolStripMenuItem1"
+        Me.YesToolStripMenuItem1.Size = New System.Drawing.Size(91, 22)
+        Me.YesToolStripMenuItem1.Text = "Yes"
+        '
+        'NoToolStripMenuItem1
+        '
+        Me.NoToolStripMenuItem1.Name = "NoToolStripMenuItem1"
+        Me.NoToolStripMenuItem1.Size = New System.Drawing.Size(91, 22)
+        Me.NoToolStripMenuItem1.Text = "No"
+        '
+        'RollExecuteToolStripMenuItem
+        '
+        Me.RollExecuteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem3, Me.NoToolStripMenuItem3})
+        Me.RollExecuteToolStripMenuItem.Name = "RollExecuteToolStripMenuItem"
+        Me.RollExecuteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.RollExecuteToolStripMenuItem.Text = "Roll and Execute?"
+        '
+        'YesToolStripMenuItem3
+        '
+        Me.YesToolStripMenuItem3.Name = "YesToolStripMenuItem3"
+        Me.YesToolStripMenuItem3.Size = New System.Drawing.Size(91, 22)
+        Me.YesToolStripMenuItem3.Text = "Yes"
+        '
+        'NoToolStripMenuItem3
+        '
+        Me.NoToolStripMenuItem3.Checked = True
+        Me.NoToolStripMenuItem3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NoToolStripMenuItem3.Name = "NoToolStripMenuItem3"
+        Me.NoToolStripMenuItem3.Size = New System.Drawing.Size(91, 22)
+        Me.NoToolStripMenuItem3.Text = "No"
+        '
+        'RollRulesEnabledToolStripMenuItem
+        '
+        Me.RollRulesEnabledToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem6, Me.NoToolStripMenuItem6})
+        Me.RollRulesEnabledToolStripMenuItem.Name = "RollRulesEnabledToolStripMenuItem"
+        Me.RollRulesEnabledToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.RollRulesEnabledToolStripMenuItem.Text = "Roll Rules Enabled?"
+        '
+        'YesToolStripMenuItem6
+        '
+        Me.YesToolStripMenuItem6.Name = "YesToolStripMenuItem6"
+        Me.YesToolStripMenuItem6.Size = New System.Drawing.Size(91, 22)
+        Me.YesToolStripMenuItem6.Text = "Yes"
+        '
+        'NoToolStripMenuItem6
+        '
+        Me.NoToolStripMenuItem6.Checked = True
+        Me.NoToolStripMenuItem6.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.NoToolStripMenuItem6.Name = "NoToolStripMenuItem6"
+        Me.NoToolStripMenuItem6.Size = New System.Drawing.Size(91, 22)
+        Me.NoToolStripMenuItem6.Text = "No"
         '
         'LegendaryRollsToolStripMenuItem
         '
@@ -402,48 +469,6 @@ Partial Class RandomFolder
         Me.NoToolStripMenuItem2.Name = "NoToolStripMenuItem2"
         Me.NoToolStripMenuItem2.Size = New System.Drawing.Size(91, 22)
         Me.NoToolStripMenuItem2.Text = "No"
-        '
-        'MultipleFoldersToolStripMenuItem
-        '
-        Me.MultipleFoldersToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem1, Me.NoToolStripMenuItem1})
-        Me.MultipleFoldersToolStripMenuItem.Name = "MultipleFoldersToolStripMenuItem"
-        Me.MultipleFoldersToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.MultipleFoldersToolStripMenuItem.Text = "Multiple Folders?"
-        '
-        'YesToolStripMenuItem1
-        '
-        Me.YesToolStripMenuItem1.Checked = True
-        Me.YesToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.YesToolStripMenuItem1.Name = "YesToolStripMenuItem1"
-        Me.YesToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.YesToolStripMenuItem1.Text = "Yes"
-        '
-        'NoToolStripMenuItem1
-        '
-        Me.NoToolStripMenuItem1.Name = "NoToolStripMenuItem1"
-        Me.NoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.NoToolStripMenuItem1.Text = "No"
-        '
-        'RollExecuteToolStripMenuItem
-        '
-        Me.RollExecuteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.YesToolStripMenuItem3, Me.NoToolStripMenuItem3})
-        Me.RollExecuteToolStripMenuItem.Name = "RollExecuteToolStripMenuItem"
-        Me.RollExecuteToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.RollExecuteToolStripMenuItem.Text = "Roll and Execute?"
-        '
-        'YesToolStripMenuItem3
-        '
-        Me.YesToolStripMenuItem3.Name = "YesToolStripMenuItem3"
-        Me.YesToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.YesToolStripMenuItem3.Text = "Yes"
-        '
-        'NoToolStripMenuItem3
-        '
-        Me.NoToolStripMenuItem3.Checked = True
-        Me.NoToolStripMenuItem3.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.NoToolStripMenuItem3.Name = "NoToolStripMenuItem3"
-        Me.NoToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
-        Me.NoToolStripMenuItem3.Text = "No"
         '
         'CreateShortcutsToolStripMenuItem
         '
@@ -550,7 +575,7 @@ Partial Class RandomFolder
         Me.FoldersExpandButton.Size = New System.Drawing.Size(85, 47)
         Me.FoldersExpandButton.TabIndex = 15
         Me.FoldersExpandButton.Text = "Choose" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Folders"
-        Me.ToolTip1.SetToolTip(Me.FoldersExpandButton, "Choose mutliple folders for use in rolls")
+        Me.ToolTip1.SetToolTip(Me.FoldersExpandButton, "Specify mutliple folders for use in rolls")
         Me.FoldersExpandButton.UseVisualStyleBackColor = True
         '
         'TextBox2
@@ -1480,17 +1505,14 @@ Partial Class RandomFolder
         Me.ToolTip1.SetToolTip(Me.OpenContainingFolderButton, "Open the containing folder")
         Me.OpenContainingFolderButton.UseVisualStyleBackColor = True
         '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.Text = "Random Folder"
-        '
         'SaveShortcutButton
         '
         Me.SaveShortcutButton.Location = New System.Drawing.Point(12, 289)
         Me.SaveShortcutButton.Name = "SaveShortcutButton"
-        Me.SaveShortcutButton.Size = New System.Drawing.Size(85, 23)
+        Me.SaveShortcutButton.Size = New System.Drawing.Size(115, 23)
         Me.SaveShortcutButton.TabIndex = 61
         Me.SaveShortcutButton.Text = "Save to Folder"
+        Me.ToolTip1.SetToolTip(Me.SaveShortcutButton, "Save the current roll to a specified directory")
         Me.SaveShortcutButton.UseVisualStyleBackColor = True
         '
         'FavoriteButton
@@ -1500,15 +1522,8 @@ Partial Class RandomFolder
         Me.FavoriteButton.Size = New System.Drawing.Size(85, 23)
         Me.FavoriteButton.TabIndex = 62
         Me.FavoriteButton.Text = "Favorite"
+        Me.ToolTip1.SetToolTip(Me.FavoriteButton, "Favorite the current roll")
         Me.FavoriteButton.UseVisualStyleBackColor = True
-        '
-        'FavoritePictureBox
-        '
-        Me.FavoritePictureBox.Location = New System.Drawing.Point(12, 169)
-        Me.FavoritePictureBox.Name = "FavoritePictureBox"
-        Me.FavoritePictureBox.Size = New System.Drawing.Size(85, 85)
-        Me.FavoritePictureBox.TabIndex = 63
-        Me.FavoritePictureBox.TabStop = False
         '
         'IgnoreRollButton
         '
@@ -1518,6 +1533,7 @@ Partial Class RandomFolder
         Me.IgnoreRollButton.Size = New System.Drawing.Size(75, 23)
         Me.IgnoreRollButton.TabIndex = 64
         Me.IgnoreRollButton.Text = "Ignore Roll"
+        Me.ToolTip1.SetToolTip(Me.IgnoreRollButton, "Remove the current roll from the roll once list")
         Me.IgnoreRollButton.UseVisualStyleBackColor = True
         Me.IgnoreRollButton.Visible = False
         '
@@ -1528,8 +1544,31 @@ Partial Class RandomFolder
         Me.ClearRollOnceListButton.Size = New System.Drawing.Size(70, 24)
         Me.ClearRollOnceListButton.TabIndex = 65
         Me.ClearRollOnceListButton.Text = "Clear List"
+        Me.ToolTip1.SetToolTip(Me.ClearRollOnceListButton, "Clear the entire roll once list")
         Me.ClearRollOnceListButton.UseVisualStyleBackColor = True
         Me.ClearRollOnceListButton.Visible = False
+        '
+        'FavoritesListButton
+        '
+        Me.FavoritesListButton.Location = New System.Drawing.Point(95, 260)
+        Me.FavoritesListButton.Name = "FavoritesListButton"
+        Me.FavoritesListButton.Size = New System.Drawing.Size(32, 23)
+        Me.FavoritesListButton.TabIndex = 70
+        Me.FavoritesListButton.Text = "List"
+        Me.ToolTip1.SetToolTip(Me.FavoritesListButton, "View the favorites list")
+        Me.FavoritesListButton.UseVisualStyleBackColor = True
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.Text = "Random File"
+        '
+        'FavoritePictureBox
+        '
+        Me.FavoritePictureBox.Location = New System.Drawing.Point(12, 169)
+        Me.FavoritePictureBox.Name = "FavoritePictureBox"
+        Me.FavoritePictureBox.Size = New System.Drawing.Size(85, 85)
+        Me.FavoritePictureBox.TabIndex = 63
+        Me.FavoritePictureBox.TabStop = False
         '
         'Label5
         '
@@ -1571,12 +1610,13 @@ Partial Class RandomFolder
         Me.Label14.Text = "TotalWeight"
         Me.Label14.Visible = False
         '
-        'RandomFolder
+        'RandomFile
         '
         Me.AcceptButton = Me.RollButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(679, 406)
+        Me.Controls.Add(Me.FavoritesListButton)
         Me.Controls.Add(Me.TextBoxTotalWeight)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.TextBox3)
@@ -1620,9 +1660,9 @@ Partial Class RandomFolder
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1800, 445)
         Me.MinimumSize = New System.Drawing.Size(695, 445)
-        Me.Name = "RandomFolder"
+        Me.Name = "RandomFile"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Random Folder"
+        Me.Text = "Random File"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TopRollsGroupBox.ResumeLayout(False)
@@ -1771,5 +1811,9 @@ Partial Class RandomFolder
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RollRulesEnabledToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents YesToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NoToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FavoritesListButton As System.Windows.Forms.Button
 
 End Class

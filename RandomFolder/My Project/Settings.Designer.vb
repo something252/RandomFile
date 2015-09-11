@@ -1170,13 +1170,49 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1, -1")>  _
         Public Property SearchFormPosition() As Global.System.Drawing.Point
             Get
                 Return CType(Me("SearchFormPosition"),Global.System.Drawing.Point)
             End Get
             Set
                 Me("SearchFormPosition") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property RollRulesEnabled() As Boolean
+            Get
+                Return CType(Me("RollRulesEnabled"),Boolean)
+            End Get
+            Set
+                Me("RollRulesEnabled") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("618, 776")>  _
+        Public Property FavoritesListSize() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("FavoritesListSize"),Global.System.Drawing.Size)
+            End Get
+            Set
+                Me("FavoritesListSize") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-1, -1")>  _
+        Public Property FavoritesListPosition() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("FavoritesListPosition"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("FavoritesListPosition") = value
             End Set
         End Property
     End Class
@@ -1190,9 +1226,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.RandomFolder.My.MySettings
+        Friend ReadOnly Property Settings() As Global.RandomFile.My.MySettings
             Get
-                Return Global.RandomFolder.My.MySettings.Default
+                Return Global.RandomFile.My.MySettings.Default
             End Get
         End Property
     End Module

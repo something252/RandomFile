@@ -12,7 +12,7 @@
     ''' </summary>
     Dim WeightsDisplay(29) As Object
     ''' <summary>
-    ''' Local version of RandomFolder variable for pre-confirmation holding. (Gets put into main form variable upon confirmation success)
+    ''' Local version of RandomFile variable for pre-confirmation holding. (Gets put into main form variable upon confirmation success)
     ''' </summary>
     Dim DisabledLine(29) As Boolean
     ''' <summary>
@@ -230,7 +230,7 @@
                     locked = False
                     Exit Sub ' terminate any further button executation
                 Else
-                    RandomFolder.TotalWeight = total ' update total weight
+                    RandomFile.TotalWeight = total ' update total weight
                 End If
 
                 DisableLineUpdate() ' update lines disabled variable in main form
@@ -239,18 +239,18 @@
                 If CheckDirectories() = True Then
                     ' Everything checks out, now do work
                     If My.Settings.AlreadyRolledListFlag = True Then
-                        RandomFolder.CreateRollOnceList() ' generate roll once list
+                        RandomFile.CreateRollOnceList() ' generate roll once list
                     End If
                     UpdateInfo()
-                    If Not IsNothing(RandomFolder.GroupWeightInfo) Then
-                        RandomFolder.GroupWeightInfo.Clear()
+                    If Not IsNothing(RandomFile.GroupWeightInfo) Then
+                        RandomFile.GroupWeightInfo.Clear()
                     End If
-                    RandomFolder.GroupWeightInfo = Me.GetGroupWeights() ' store group weights info for UpdateTrees()
-                    RandomFolder.UpdateTrees() ' update file and folder trees
-                    RandomFolder.MultipleFoldersHandled = True ' Successful handling has happened
+                    RandomFile.GroupWeightInfo = Me.GetGroupWeights() ' store group weights info for UpdateTrees()
+                    RandomFile.UpdateTrees() ' update file and folder trees
+                    RandomFile.MultipleFoldersHandled = True ' Successful handling has happened
                     My.Settings.ParentFoldersLastActiveSave = CurrentActiveSave ' set new last active save value
-                    RandomFolder.RecomputeTreesChangesWereMade = False ' don't double compute tree(s) unnecessarily
-                    RandomFolder.RollButton.PerformClick()
+                    RandomFile.RecomputeTreesChangesWereMade = False ' don't double compute tree(s) unnecessarily
+                    RandomFile.RollButton.PerformClick()
                     If Search.Visible = True Then
                         Search.RefreshButton_Click()
                     End If
@@ -267,22 +267,18 @@
     Private Sub UpdateInfo()
         For y As Integer = 0 To Directories.Count - 1
             If Not (Directories(y).Text = "") Then ' if not empty
-                RandomFolder.FolderDirectories(y) = Directories(y).Text
-                RandomFolder.FolderWeights(y) = CInt(Weights(y).Text)
+                RandomFile.FolderDirectories(y) = Directories(y).Text
+                RandomFile.FolderWeights(y) = CInt(Weights(y).Text)
             Else ' empty
-                RandomFolder.FolderDirectories(y) = "" ' mark as empty
-                RandomFolder.FolderWeights(y) = 0
+                RandomFile.FolderDirectories(y) = "" ' mark as empty
+                RandomFile.FolderWeights(y) = 0
             End If
         Next
 
         SaveActiveSave() ' save the active save to My.Settings
     End Sub
 
-    ''' <summary>
-    ''' Flag for when shown event has finished.
-    ''' </summary>
-    Dim shownComplete As Boolean = False
-    Private Sub ParentFolders_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub ParentFolders_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = My.Resources.icon
 
         ' assign directory control objects
@@ -356,14 +352,22 @@
         'DisableLinesStartup() ' disable lines that were previously disabled
         'UpdateWeightDisplays() ' re-compute weight display percentage labels
 
-        If RandomFolder.ParentFoldersFormOpenedOnce = False Then
+        If RandomFile.ParentFoldersFormOpenedOnce = False Then
             ' Prevent no textBox data shown when pressing x without doing anything first time opening,
             ' then opening again to find no default data in fields
             UpdateInfo()
         End If
 
         shownComplete = True
-        RandomFolder.ParentFoldersFormOpenedOnce = True ' Opened this form once or more flag (used in other form)
+        RandomFile.ParentFoldersFormOpenedOnce = True ' Opened this form once or more flag (used in other form)
+    End Sub
+
+    ''' <summary>
+    ''' Flag for when shown event has finished.
+    ''' </summary>
+    Dim shownComplete As Boolean = False
+    Private Sub ParentFolders_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
     End Sub
 
     Private Sub Browse_Click(sender As Object, e As EventArgs) Handles Browse1.Click
@@ -637,8 +641,8 @@
     ''' Used when confirmation button successful. (Updates main form variable)
     ''' </summary>
     Private Sub DisableLineUpdate()
-        For i As Integer = 0 To RandomFolder.DisabledLine.Count - 1
-            RandomFolder.DisabledLine(i) = Me.DisabledLine(i)
+        For i As Integer = 0 To RandomFile.DisabledLine.Count - 1
+            RandomFile.DisabledLine(i) = Me.DisabledLine(i)
         Next
     End Sub
 
@@ -646,9 +650,9 @@
     ''' Used when confirmation button successful. (Updates main form group variable)
     ''' </summary>
     Private Sub GroupsUpdate()
-        For i As Integer = 0 To RandomFolder.FolderGroups.Count - 1
+        For i As Integer = 0 To RandomFile.FolderGroups.Count - 1
             Dim tmp As String = Me.Groups(i).SelectedItem
-            RandomFolder.FolderGroups(i) = tmp
+            RandomFile.FolderGroups(i) = tmp
         Next
     End Sub
 
@@ -1057,5 +1061,4 @@ SaveChangesNoOption:
             e.Effect = DragDropEffects.All
         End If
     End Sub
-
 End Class

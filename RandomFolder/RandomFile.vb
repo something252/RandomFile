@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 
-Public Class RandomFolder
+Public Class RandomFile
     ''' <summary>
     ''' Used to prevent multiple clicks, not necessary without threading.
     ''' </summary>
@@ -473,7 +473,9 @@ OutputFolderSuccess:
         Return "Null"
     End Function
 
-    ' file or folder no longer exists error message
+    ''' <summary>
+    ''' File Or folder no longer exists error message.
+    ''' </summary>
     Private Sub ErrorMessage124(str As String)
         MsgBox("File or Folder no longer exists:" & vbNewLine & """" & str & """", MsgBoxStyle.Critical)
     End Sub
@@ -524,77 +526,81 @@ OutputFolderSuccess:
     ''' Handles the roll value determination for a given file/folder.
     ''' </summary>
     Private Function Roll_Dice() As Integer
-        Static R As New Random() ' Static create a Random object so that we do not create a new one each time
-        Dim RollValue As Integer
-        Dim FirstTime As Boolean = True
-        Dim Total_Times As Integer = 0 ' Tally for amount of times to add to list
-        For Rolls As Integer = 1 To 1 Step -1 ' For range is inclusive to max value (so 1 to 2 is 1 AND 2 then stop)
+        If RollRulesEnabled = False Then
+            Return 1 ' rules are disabled
+        Else
+            Static R As New Random() ' Static create a Random object so that we do not create a new one each time
+            Dim RollValue As Integer
+            Dim FirstTime As Boolean = True
+            Dim Total_Times As Integer = 0 ' Tally for amount of times to add to list
+            For Rolls As Integer = 1 To 1 Step -1 ' For range is inclusive to max value (so 1 to 2 is 1 AND 2 then stop)
 
-            ' Get a random number. The second parameter is exclusive so (0,4) will always return 3 as a maximum
-            RollValue = R.Next(1, 101) ' 1 - 100
-            RollsRichTextBox.AppendText(RollValue & ", ")
-            'If FirstTime = True Then
-            '    RollValue = 1
-            'End If
+                ' Get a random number. The second parameter is exclusive so (0,4) will always return 3 as a maximum
+                RollValue = R.Next(1, 101) ' 1 - 100
+                RollsRichTextBox.AppendText(RollValue & ", ")
+                'If FirstTime = True Then
+                '    RollValue = 1
+                'End If
 
-            If RollValue >= 36 Then ' Range = 36-100    (COMMON)
-                If CheckParity(RollValue) = True Then ' Even roll
-                    Rolls += 1 ' Reroll 1 more time
-                    Total_Times += 1
-                ElseIf FirstTime = True Then ' First time and odd roll
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 1
-                ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time anyway!)
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 1
-                End If
-                ' Odd rerolls are not added. (see below)****
-            ElseIf RollValue >= 19 Then ' Range = 19-35 (RARE!)
-                ' If reroll into this range and odd, add them then stop
-                If CheckParity(RollValue) = True Then ' Even roll
-                    Rolls += 1 ' Reroll 1 more time
-                    Total_Times += 5
-                ElseIf FirstTime = True Then ' First time and odd roll
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 5
-                ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time anyway!)
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 5
-                End If
-                ' Odd rerolls are not added. (see below)****
-            ElseIf RollValue >= 2 Then ' Range = 3-18   (UNIQUE!!)
-                ' (**If roll this as first roll or repeat roll then add and roll again) if reroll into this range and odd, add them then stop
+                If RollValue >= 36 Then ' Range = 36-100    (COMMON)
+                    If CheckParity(RollValue) = True Then ' Even roll
+                        Rolls += 1 ' Reroll 1 more time
+                        Total_Times += 1
+                    ElseIf FirstTime = True Then ' First time and odd roll
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 1
+                    ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time anyway!)
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 1
+                    End If
+                    ' Odd rerolls are not added. (see below)****
+                ElseIf RollValue >= 19 Then ' Range = 19-35 (RARE!)
+                    ' If reroll into this range and odd, add them then stop
+                    If CheckParity(RollValue) = True Then ' Even roll
+                        Rolls += 1 ' Reroll 1 more time
+                        Total_Times += 5
+                    ElseIf FirstTime = True Then ' First time and odd roll
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 5
+                    ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time anyway!)
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 5
+                    End If
+                    ' Odd rerolls are not added. (see below)****
+                ElseIf RollValue >= 2 Then ' Range = 3-18   (UNIQUE!!)
+                    ' (**If roll this as first roll or repeat roll then add and roll again) if reroll into this range and odd, add them then stop
 GoTo1:
-                If CheckParity(RollValue) = True Then ' Even roll
-                    Rolls += 1 ' Reroll 1 more time
-                    Total_Times += 15
-                ElseIf FirstTime = True Then ' First time and odd roll
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 15
-                ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time!)
-                    ' Odd roll; No additional rolls added
-                    Total_Times += 15
+                    If CheckParity(RollValue) = True Then ' Even roll
+                        Rolls += 1 ' Reroll 1 more time
+                        Total_Times += 15
+                    ElseIf FirstTime = True Then ' First time and odd roll
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 15
+                    ElseIf LegendaryFlag = True Then ' Odd reroll, but legendary was rolled (so add time!)
+                        ' Odd roll; No additional rolls added
+                        Total_Times += 15
+                    End If
+                    ' Odd rerolls are not added. (see below)****
+                ElseIf RollValue >= 1 Then ' Range = 1-1    (LEGENDARY!!!)
+                    ' (**If roll this as repeat roll or first roll then add and roll again) if reroll into this range or again, ignore and treat as usual
+                    ' ****(If reroll value is odd value then no rolls are added but respective range's times value is added to Total_Times)
+                    If LegendaryRollsEnabled Then
+                        Total_Times += 50
+                        Rolls += 10 ' Reroll 10 more times! (Stacks with additional rerolls including itself if it hits this range again!)
+                        LegendaryFlag = True
+                    Else ' Legendary rolls disabled
+                        GoTo GoTo1 ' GoTo previous roll range instead
+                    End If
                 End If
-                ' Odd rerolls are not added. (see below)****
-            ElseIf RollValue >= 1 Then ' Range = 1-1    (LEGENDARY!!!)
-                ' (**If roll this as repeat roll or first roll then add and roll again) if reroll into this range or again, ignore and treat as usual
-                ' ****(If reroll value is odd value then no rolls are added but respective range's times value is added to Total_Times)
-                If LegendaryRollsEnabled Then
-                    Total_Times += 50
-                    Rolls += 10 ' Reroll 10 more times! (Stacks with additional rerolls including itself if it hits this range again!)
-                    LegendaryFlag = True
-                Else ' Legendary rolls disabled
-                    GoTo GoTo1 ' GoTo previous roll range instead
-                End If
-            End If
 
-            FirstTime = False
-        Next
-        RollsRichTextBoxBuffer.AppendText(RollsRichTextBox.Text)
-        RollsRichTextBox.Clear()
-        RollsRichTextBox.AppendText(RollsRichTextBoxBuffer.Text.Remove(RollsRichTextBoxBuffer.Text.Count - 2)) ' remove last ", " chars
-        RollsRichTextBoxBuffer.Clear()
-        Return Total_Times ' Return total times to add to list
+                FirstTime = False
+            Next
+            RollsRichTextBoxBuffer.AppendText(RollsRichTextBox.Text)
+            RollsRichTextBox.Clear()
+            RollsRichTextBox.AppendText(RollsRichTextBoxBuffer.Text.Remove(RollsRichTextBoxBuffer.Text.Count - 2)) ' remove last ", " chars
+            RollsRichTextBoxBuffer.Clear()
+            Return Total_Times ' Return total times to add to list
+        End If
     End Function
 
     ''' <summary>
@@ -870,7 +876,7 @@ Goto112512:
         TextBoxTotalWeight.Text = TotalWeight
     End Sub
 
-    Private Sub RandomFolder_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+    Private Sub RandomFile_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         ListRolls(0) = ListRoll1 : ListRolls(1) = ListRoll2 : ListRolls(2) = ListRoll3 : ListRolls(3) = ListRoll4
         ListRolls(4) = ListRoll5 : ListRolls(5) = ListRoll6 : ListRolls(6) = ListRoll7 : ListRolls(7) = ListRoll8
         ListRolls(8) = ListRoll9 : ListRolls(9) = ListRoll10
@@ -1489,7 +1495,7 @@ Goto112512:
         End If
     End Sub
 
-    Private Sub RandomFolder_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub RandomFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.NotifyIcon1.Icon = My.Resources.icon
 
         If My.Settings.RollCandidates = "Both" Then ' roll candidates setting
@@ -1584,38 +1590,36 @@ Goto112512:
             IgnoreRollButton.Visible = False
             ClearRollOnceListButton.Visible = False
         End If
+        If My.Settings.RollRulesEnabled = True Then
+            RollRulesEnabled = True
+            NoToolStripMenuItem6.Checked = False
+            YesToolStripMenuItem6.Checked = True
+
+            RollsRichTextBox.Enabled = True
+            Label4.Enabled = True
+            TimesBox.Enabled = True
+            Label3.Enabled = True
+        Else
+            RollRulesEnabled = False
+            NoToolStripMenuItem6.Checked = True
+            YesToolStripMenuItem6.Checked = False
+
+            RollsRichTextBox.Enabled = False
+            Label4.Enabled = False
+            TimesBox.Enabled = False
+            Label3.Enabled = False
+        End If
 
         ' set and check saved main form starting location if it's within screen(s) bounds and whether to reset or not
-        If My.Settings.MainFormLocation.X <> -1 AndAlso My.Settings.MainFormLocation.Y <> -1 Then ' if default values
-            Me.Location = My.Settings.MainFormLocation
+        If Not IsNothing(My.Settings.MainFormLocation) AndAlso _
+             (My.Settings.MainFormLocation.X <> -1 AndAlso My.Settings.MainFormLocation.Y <> -1) Then
+            If FormVisible(My.Settings.MainFormLocation) OrElse _
+                FormVisible(New Point(My.Settings.MainFormLocation.X + Me.Size.Width, My.Settings.MainFormLocation.Y)) Then
+                Me.Location = My.Settings.MainFormLocation
+            Else
+                Me.Location = New Point((Screen.PrimaryScreen.WorkingArea.Width / 2) - (Me.Size.Width / 2), (Screen.PrimaryScreen.WorkingArea.Height / 2) - (Me.Size.Height / 2))
+            End If
         End If
-        Dim allScreens() As Windows.Forms.Screen = Screen.AllScreens
-        Dim totalX As Integer = 0, currentY As Integer = 0, countTmp As Integer = 0
-        For Each screen1 In allScreens ' test if screen location is out of bounds (usually only possible if was saved on a now not active monitor or save editted badly)
-            totalX += screen1.WorkingArea.Width
-            currentY = screen1.WorkingArea.Height
-
-            If countTmp = 0 Then ' check on first screen only
-                If Me.Location.X < 0 AndAlso (Me.Location.X + Me.Size.Width <= 0) Then ' check for negative X
-                    GoTo resetScreen
-                ElseIf Me.Location.Y < 0 Then ' check for negative Y
-                    GoTo resetScreen
-                End If
-            End If
-
-            If Not Me.Location.X > totalX AndAlso Me.Location.Y < currentY - 30 Then ' taskbar is not accounted for very well so program could be hidden by it if save is editted
-                Exit For ' doesn't need location resetting
-            End If
-
-            countTmp += 1
-            If allScreens.Count = countTmp Then ' if last screen tested
-resetScreen:
-                'Me.Location = New Point(0, 0) ' reset the location to upper left most position
-                Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2) - (Me.Size.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (Me.Size.Height / 2)) ' Center the form
-                Exit For
-            End If
-        Next
-
     End Sub
 
     ''' <summary>
@@ -1641,6 +1645,21 @@ resetScreen:
             NotifyIcon1.Visible = False
         End If
     End Sub
+
+    ''' <summary>
+    ''' Test if form location is out of bounds (usually only possible if was saved on a now not active monitor or settings file edited)
+    ''' </summary>
+    Public Function FormVisible(ByRef Loc As Point) As Boolean
+        Try
+            For Each screen1 In Screen.AllScreens
+                If (screen1.Bounds.Contains(Loc)) Then
+                    Return True
+                End If
+            Next
+        Catch ex As Exception
+        End Try
+        Return False
+    End Function
 
     ''' <summary>
     ''' Tray icon mouse clicking related.
@@ -1696,11 +1715,31 @@ resetScreen:
         End If
     End Sub
 
-    Private Sub RandomFolder_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    Public Sub RandomFile_FormClosing() Handles MyBase.FormClosing
+        If Me.WindowState = FormWindowState.Minimized Then ' minimizing makes location -32000 coords
+            If Me.Visible = False Then
+                Me.Visible = True
+            End If
+            Me.Opacity = 0.0
+            Me.WindowState = FormWindowState.Normal
+        End If
         My.Settings.MainFormLocation = Me.Location
+
         If TopRollsExpandButton_toggle = False Then
             My.Settings.TopRollsExpandSize = Me.Size
         End If
+
+RestartLoop1:  ' restart loop because form has been removed from iteration
+        For Each myForm As Form In My.Application.OpenForms
+            ' perform form closing events to save any settings
+            If myForm.Name = Search.Name Then
+                Search.Close()
+                GoTo RestartLoop1
+            ElseIf myForm.Name = FavoritesList.Name Then
+                FavoritesList.Close()
+                GoTo RestartLoop1
+            End If
+        Next
     End Sub
 
     Private Sub YesToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles YesToolStripMenuItem5.Click
@@ -1759,6 +1798,19 @@ resetScreen:
                             My.Settings.AlreadyRolledList.Remove(ResultBox.Text)
                         End If
                     End If
+
+                    For Each myForm As Form In My.Application.OpenForms
+                        If myForm.Name = FavoritesList.Name Then
+                            With FavoritesList
+                                If File.Exists(ResultBox.Text) Then
+                                    .ListBox1.Items.Add(Search.RemoveExtension(Search.GetFileName(ResultBox.Text))) ' partial path
+                                Else
+                                    .ListBox1.Items.Add(Search.GetFileName(ResultBox.Text)) ' partial path
+                                End If
+                                .ListBox1Names.Items.Add(ResultBox.Text) ' full path
+                            End With
+                        End If
+                    Next
                 End If
             Else ' current roll is favorite
 
@@ -1769,6 +1821,19 @@ resetScreen:
                     If RollOnceListFlag = True Then
                         RollOnceListHandling("Add")
                     End If
+
+                    For Each myForm As Form In My.Application.OpenForms
+                        If myForm.Name = FavoritesList.Name Then
+                            With FavoritesList
+                                If File.Exists(ResultBox.Text) Then
+                                    .ListBox1.Items.Remove(Search.RemoveExtension(Search.GetFileName(ResultBox.Text))) ' partial path
+                                Else
+                                    .ListBox1.Items.Remove(Search.GetFileName(ResultBox.Text)) ' partial path
+                                End If
+                                .ListBox1Names.Items.Remove(ResultBox.Text) ' full path
+                            End With
+                        End If
+                    Next
                 End If
             End If
         End If
@@ -1995,7 +2060,7 @@ resetScreen:
         End If
     End Sub
 
-    Private Sub RandomFolder_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+    Private Sub RandomFile_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then ' right mouse button pressed
             Dim mousePos As Point = Me.PointToClient(Windows.Forms.Cursor.Position)
             If mousePos.X >= FoldersExpandButton.Location.X AndAlso mousePos.X <= FoldersExpandButton.Size.Width + FoldersExpandButton.Location.X AndAlso _
@@ -2007,5 +2072,50 @@ resetScreen:
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         About.Show()
+    End Sub
+
+    ''' <summary>
+    ''' Flag for roll rules being enabled or not. Disabled means all rolls are worth 1 always.
+    ''' </summary>
+    Dim RollRulesEnabled As Boolean = False
+    ''' <summary>
+    ''' Roll rules enabled.
+    ''' </summary>
+    Private Sub YesToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles YesToolStripMenuItem6.Click
+        If Not YesToolStripMenuItem6.Checked = True Then
+            RollRulesEnabled = True
+            My.Settings.RollRulesEnabled = True
+            NoToolStripMenuItem6.Checked = False
+            YesToolStripMenuItem6.Checked = True
+
+            RollsRichTextBox.Enabled = True
+            Label4.Enabled = True
+            TimesBox.Enabled = True
+            Label3.Enabled = True
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Roll rules disabled.
+    ''' </summary>
+    Private Sub NoToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles NoToolStripMenuItem6.Click
+        If Not NoToolStripMenuItem6.Checked = True Then
+            RollRulesEnabled = False
+            My.Settings.RollRulesEnabled = False
+            NoToolStripMenuItem6.Checked = True
+            YesToolStripMenuItem6.Checked = False
+
+            RollsRichTextBox.Enabled = False
+            Label4.Enabled = False
+            TimesBox.Enabled = False
+            Label3.Enabled = False
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Shows list of favorites.
+    ''' </summary>
+    Private Sub ShowFavoritesList() Handles FavoritesListButton.Click
+        FavoritesList.Show()
     End Sub
 End Class

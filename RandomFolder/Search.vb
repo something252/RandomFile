@@ -96,7 +96,7 @@ Public Class Search
         End If
         ForwardButton.Enabled = False
         UpButton.Enabled = False
-        If RandomFolder.RecomputeTreesChangesWereMade = True Then
+        If RandomFile.RecomputeTreesChangesWereMade = True Then
             RefreshTrees()
         End If
         TreeViewAll.Nodes.Clear()
@@ -137,14 +137,19 @@ Public Class Search
                 Me.Size = .SearchFormSize
             End If
             If Not IsNothing(.SearchFormPosition) AndAlso _
-                .SearchFormPosition.X > 0 AndAlso .SearchFormPosition.Y > 0 Then
-                Me.Location = .SearchFormPosition
+                (My.Settings.SearchFormPosition.X <> -1 AndAlso My.Settings.SearchFormPosition.Y <> -1) Then
+                If RandomFile.FormVisible(.SearchFormPosition) OrElse _
+                    RandomFile.FormVisible(New Point(.SearchFormPosition.X + Me.Size.Width, .SearchFormPosition.Y)) Then
+                    Me.Location = .SearchFormPosition
+                Else
+                    Me.Location = New Point((Screen.PrimaryScreen.WorkingArea.Width / 2) - (Me.Size.Width / 2), (Screen.PrimaryScreen.WorkingArea.Height / 2) - (Me.Size.Height / 2))
+                End If
             End If
         End With
     End Sub
 
     Private Sub RefreshTrees()
-        With RandomFolder
+        With RandomFile
             If .RecomputeTreesChangesWereMade = True Then
                 If ((.SpecifiedShortcutFolder = True OrElse .shortcutCreationAllowed = False) AndAlso .MultipleFoldersFlag = False) Then
                     .ParentFolderSingleFolderChanged = True ' recompute for single folder option
@@ -172,7 +177,7 @@ Public Class Search
     End Sub
 
     Private Sub GenerateTreeViewMain()
-        With RandomFolder
+        With RandomFile
             If ((.SpecifiedShortcutFolder = True OrElse .shortcutCreationAllowed = False) AndAlso .MultipleFoldersFlag = False) OrElse _
                 ((.SpecifiedShortcutFolder = True OrElse .shortcutCreationAllowed = False) AndAlso .MultipleFoldersFlag = True AndAlso .MultipleFoldersHandled = True) Then
                 'If IsNothing(.RollOnceList) Then
@@ -233,12 +238,12 @@ GoToSearchNotPossible:
     ''' Used to generate the TreeView based on ArrayList input containing full path strings.
     ''' </summary>
     Private Sub GenerateWork(ByRef DirectoryTree As Object)
-        With RandomFolder
+        With RandomFile
 
             Dim PerformedCheck As ArrayList = New ArrayList ' holds groups (grouped rows) that have already populated the TreeView
 
             Dim listTemp As Object
-            If RandomFolder.MultipleFoldersFlag = True Then
+            If RandomFile.MultipleFoldersFlag = True Then
                 Dim tmp() As ArrayList = DirectoryTree
                 listTemp = tmp
             Else
@@ -249,7 +254,7 @@ GoToSearchNotPossible:
 
             For k As Integer = 0 To listTemp.Length - 1
                 If Not IsNothing(listTemp(k)) Then
-                    If (RandomFolder.MultipleFoldersFlag = False) OrElse (Not PerformedCheck.Contains(.FolderGroups(k)) OrElse .FolderGroups(k) = "") Then
+                    If (RandomFile.MultipleFoldersFlag = False) OrElse (Not PerformedCheck.Contains(.FolderGroups(k)) OrElse .FolderGroups(k) = "") Then
 
                         Dim RootNode As TreeNode = TopNodeVar
                         For Each obj1 As String In listTemp(k)
@@ -296,7 +301,7 @@ GoToSearchNotPossible:
                             End If
                         Next
 
-                        If RandomFolder.MultipleFoldersFlag = True AndAlso (Not .FolderGroups(k) = "" AndAlso Not PerformedCheck.Contains(.FolderGroups(k))) Then
+                        If RandomFile.MultipleFoldersFlag = True AndAlso (Not .FolderGroups(k) = "" AndAlso Not PerformedCheck.Contains(.FolderGroups(k))) Then
                             PerformedCheck.Add(.FolderGroups(k))
                         End If
                     End If
@@ -352,7 +357,7 @@ continueForFindNode1:  ' continue for
     ''' <summary>
     ''' Removes the extension from a string. (That was constructed by split on backslash)
     ''' </summary>
-    Private Function RemoveExtension(ByRef Str As String) As String
+    Public Function RemoveExtension(ByRef Str As String) As String
         If ExtensionsCheckBox.Checked = False Then
             If Str.Length > 0 Then
                 Dim index As Integer = -999 ' store index of last period
@@ -383,8 +388,12 @@ continueForFindNode1:  ' continue for
             My.Settings.SearchShowExtensions = False
         End If
 
-        My.Settings.SearchFormSize = Me.Size
+        If Me.WindowState = FormWindowState.Minimized Then ' minimizing makes location -32000 coords
+            Me.Opacity = 0.0
+            Me.WindowState = FormWindowState.Normal
+        End If
         My.Settings.SearchFormPosition = Me.Location
+        My.Settings.SearchFormSize = Me.Size
     End Sub
 
     Private Sub Search_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -630,7 +639,7 @@ continueForFindNode1:  ' continue for
                         UpButton.Enabled = True
                     End If
                 ElseIf File.Exists(CurrentPath) Then
-                    RandomFolder.OpenFile(CurrentPath)
+                    RandomFile.OpenFile(CurrentPath)
                 End If
             Else
                 MsgBox("File or folder no longer exists!", MsgBoxStyle.Critical, "Warning")
@@ -686,7 +695,7 @@ continueForFindNode1:  ' continue for
                     ResetSearchText() ' refresh search box text
 
                 ElseIf File.Exists(ItemFullPath) Then
-                    RandomFolder.OpenFile(ItemFullPath)
+                    RandomFile.OpenFile(ItemFullPath)
                 End If
             End If
         End If
@@ -737,7 +746,7 @@ continueForFindNode1:  ' continue for
 
     ' ListView related
     Private Sub OpenContainingFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenContainingFolderToolStripMenuItem.Click
-        With RandomFolder
+        With RandomFile
             If Not IsNothing(ListViewMain.SelectedItems) AndAlso ListViewMain.SelectedItems.Count > 0 Then
                 .ContainingButton(ListViewMain.SelectedItems.Item(0).Name)
             End If
@@ -757,7 +766,7 @@ continueForFindNode1:  ' continue for
                 End Try
             ElseIf Not IsNothing(CurrentNode) Then
                 If Directory.Exists(CurrentNode.Name) OrElse File.Exists(CurrentNode.Name) Then
-                    With RandomFolder
+                    With RandomFile
                         .ContainingButton(CurrentNode.Name)
                     End With
                 End If
@@ -1480,7 +1489,7 @@ continueForFindNode1:  ' continue for
             If ListViewVar.SelectedItems.Count > 0 Then
                 Dim Path As String = ListViewVar.SelectedItems.Item(0).Name ' open first selected item
                 If File.Exists(Path) Then
-                    RandomFolder.OpenFile(Path)
+                    RandomFile.OpenFile(Path)
                 ElseIf Directory.Exists(Path) Then
                     If Path.Length > 0 AndAlso Not Path(Path.Length - 1) = "\" Then
                         Path &= "\"
@@ -1516,7 +1525,7 @@ continueForFindNode1:  ' continue for
         If Not IsNothing(CurrentSearch) AndAlso SearchIsCurrentlyDisplayed = True AndAlso _
             Not IsNothing(CurrentSearch.ListViewVar.SelectedItems) AndAlso CurrentSearch.ListViewVar.SelectedItems.Count > 0 Then
             If Directory.Exists(CurrentSearch.ListViewVar.SelectedItems.Item(0).Name) OrElse File.Exists(CurrentSearch.ListViewVar.SelectedItems.Item(0).Name) Then
-                With RandomFolder
+                With RandomFile
                     .ContainingButton(CurrentSearch.ListViewVar.SelectedItems.Item(0).Name)
                 End With
             End If
@@ -1615,7 +1624,7 @@ continueForFindNode1:  ' continue for
     ''' <summary>
     ''' Implements a comparer for ListView columns.
     ''' </summary>
-    Class ListViewComparer
+    Private Class ListViewComparer
         Implements IComparer
 
         Private columnNumber As Integer
@@ -1684,5 +1693,4 @@ continueForFindNode1:  ' continue for
             End If
         End Function
     End Class
-
 End Class

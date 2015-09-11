@@ -13,7 +13,7 @@ Module ShortcutModule
     ''' <param name="iconNumber">The position of the icon within the icon file. This is zero if the icon file is an icon itself.</param>
     Public Function CreateShortCut(ByVal shortcutName As String, ByVal creationDir As String, ByVal targetFullpath As String, _
                                     ByVal workingDir As String, ByVal iconFile As String, ByVal iconNumber As Integer) As Boolean
-        If RandomFolder.shortcutCreationAllowed = True Then
+        If RandomFile.shortcutCreationAllowed = True Then
             Try
                 If Not IO.Directory.Exists(creationDir) Then
                     Dim retVal As DialogResult = MsgBox("""" & creationDir & """" & " does not exist. Do you wish to create it?", MsgBoxStyle.YesNo)
@@ -34,7 +34,7 @@ Module ShortcutModule
                 shortCut = CType(shell.CreateShortcut(creationDir & "\" & shortcutName & ".lnk"), IWshRuntimeLibrary.IWshShortcut)
                 shortCut.TargetPath = targetFullpath
                 shortCut.WindowStyle = 1
-                'shortCut.Description = "Random Folder Shortcut"
+                'shortCut.Description = "Random File Shortcut"
                 shortCut.WorkingDirectory = workingDir
                 'shortCut.IconLocation = iconFile & ", " & iconNumber
                 shortCut.Save()
@@ -50,7 +50,7 @@ Module ShortcutModule
     ''' Determine an available name for the shortcut if one already exists.
     ''' </summary>
     Public Sub DetermineShortcuts(ByVal shortcutName As String, ByVal creationDir As String)
-        If RandomFolder.shortcutCreationAllowed = True Then
+        If RandomFile.shortcutCreationAllowed = True Then
             shortcutName = shortcutName & " - Shortcut"
 
             If My.Computer.FileSystem.FileExists(creationDir & "\" & shortcutName & ".lnk") Then ' if shortcut file already exists
@@ -65,12 +65,12 @@ Module ShortcutModule
                 Next
             End If
 
-            CreateShortCut(shortcutName, creationDir, RandomFolder.ResultBox.Text, RandomFolder.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
-            If CInt(RandomFolder.TimesBox.Text) >= 2 Then
-                CreateShortCut(shortcutName & " - Copy", creationDir, RandomFolder.ResultBox.Text, RandomFolder.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
+            CreateShortCut(shortcutName, creationDir, RandomFile.ResultBox.Text, RandomFile.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
+            If CInt(RandomFile.TimesBox.Text) >= 2 Then
+                CreateShortCut(shortcutName & " - Copy", creationDir, RandomFile.ResultBox.Text, RandomFile.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
             End If
-            For count As Integer = 3 To CInt(RandomFolder.TimesBox.Text) Step 1
-                CreateShortCut(shortcutName & " - Copy (" & count & ")", creationDir, RandomFolder.ResultBox.Text, RandomFolder.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
+            For count As Integer = 3 To CInt(RandomFile.TimesBox.Text) Step 1
+                CreateShortCut(shortcutName & " - Copy (" & count & ")", creationDir, RandomFile.ResultBox.Text, RandomFile.TextBox1.Text, "C:\Windows\System32\imageres.dll", 4)
             Next
         End If
     End Sub

@@ -13,12 +13,14 @@
 
     ' terminate the program
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        RandomFolder.Close() ' close the application
+        'RandomFile.RandomFile_FormClosing()
+        RandomFile.Close()
+        'Application.Exit() ' close the application
     End Sub
 
     Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
-        RandomFolder.Show()
-        RandomFolder.WindowState = FormWindowState.Normal
+        RandomFile.Show()
+        RandomFile.WindowState = FormWindowState.Normal
         Me.Close()
     End Sub
 

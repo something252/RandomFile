@@ -1,7 +1,7 @@
 ﻿Module FileTree
     Private SubFiles As New ArrayList
     Private SubFolders As New ArrayList
-    Private TmpStr(), FileExtension As String
+    Private FileExtension As String
     ''' <summary>
     ''' Flag for whether or not group value was provided and is being used.
     ''' </summary>
@@ -39,9 +39,9 @@
             End Try
         Else ' part of a group
             groupFlag = True
-            For i As Integer = 0 To RandomFolder.FolderDirectories.Count - 1 ' searches and performs work for all directories in group
-                If RandomFolder.FolderGroups(i) = group AndAlso RandomFolder.DisabledLine(i) = False Then
-                    Dim pathTemp As String = RandomFolder.FolderDirectories(i)
+            For i As Integer = 0 To RandomFile.FolderDirectories.Count - 1 ' searches and performs work for all directories in group
+                If RandomFile.FolderGroups(i) = group AndAlso RandomFile.DisabledLine(i) = False Then
+                    Dim pathTemp As String = RandomFile.FolderDirectories(i)
                     Try
                         Dim list = System.IO.Directory.GetFiles(pathTemp)
 
@@ -64,8 +64,6 @@
         If (Not My.Settings.WhitelistedFileTypes.Count = 0 AndAlso My.Settings.WhitelistEnabled = True) OrElse _
            (Not My.Settings.BlacklistedFileTypes.Count = 0 AndAlso My.Settings.BlacklistEnabled = True) Then ' whitelist contains extensions (add only those)
             For Each FilePath In list
-                'TmpStr = Split(FilePath, ".")
-                'FileExtension = TmpStr(TmpStr.Count - 1) ' Put last element into variable (to find extension)
                 FileExtension = GetFileType(FilePath)
 
                 Dim flag1 As Boolean = True ' true means a file path is allowed entry into the SubFiles list
@@ -89,12 +87,12 @@
                 If flag1 = True Then
                     If groupFlag = True Then
                         If Not SubFiles.Contains(FilePath) Then ' prevent duplicates for groups
-                            If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FilePath)) Then
+                            If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FilePath)) Then
                                 SubFiles.Add(FilePath)
                             End If
                         End If
                     Else
-                        If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FilePath)) Then
+                        If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FilePath)) Then
                             SubFiles.Add(FilePath)
                         End If
                     End If
@@ -104,12 +102,12 @@
             For Each FilePath In list
                 If groupFlag = True Then
                     If Not SubFiles.Contains(FilePath) Then ' prevent duplicates for groups
-                        If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FilePath)) Then
+                        If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FilePath)) Then
                             SubFiles.Add(FilePath)
                         End If
                     End If
                 Else
-                    If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FilePath)) Then
+                    If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FilePath)) Then
                         SubFiles.Add(FilePath)
                     End If
                 End If
@@ -189,12 +187,12 @@
                 For Each FolderPath In list
                     If groupFlag = True Then
                         If Not SubFolders.Contains(FolderPath) Then ' prevent duplicates for groups
-                            If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FolderPath)) Then
+                            If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FolderPath)) Then
                                 SubFolders.Add(FolderPath)
                             End If
                         End If
                     Else
-                        If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FolderPath)) Then
+                        If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FolderPath)) Then
                             SubFolders.Add(FolderPath)
                         End If
                     End If
@@ -212,21 +210,21 @@
             End Try
         Else ' part of a group
             groupFlag = True
-            For i As Integer = 0 To RandomFolder.FolderDirectories.Count - 1  ' searches and performs work for all directories in group
-                If RandomFolder.FolderGroups(i) = group AndAlso RandomFolder.DisabledLine(i) = False Then
-                    Dim pathTemp As String = RandomFolder.FolderDirectories(i)
+            For i As Integer = 0 To RandomFile.FolderDirectories.Count - 1  ' searches and performs work for all directories in group
+                If RandomFile.FolderGroups(i) = group AndAlso RandomFile.DisabledLine(i) = False Then
+                    Dim pathTemp As String = RandomFile.FolderDirectories(i)
                     Try
                         Dim list = System.IO.Directory.GetDirectories(pathTemp)
 
                         For Each FolderPath In list
                             If groupFlag = True Then
                                 If Not SubFolders.Contains(FolderPath) Then ' prevent duplicates for groups
-                                    If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FolderPath)) Then
+                                    If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FolderPath)) Then
                                         SubFolders.Add(FolderPath)
                                     End If
                                 End If
                             Else
-                                If RandomFolder.RollOnceListFlag = False OrElse (RandomFolder.RollOnceListFlag = True AndAlso Not RandomFolder.RollOnceList.Contains(FolderPath)) Then
+                                If RandomFile.RollOnceListFlag = False OrElse (RandomFile.RollOnceListFlag = True AndAlso Not RandomFile.RollOnceList.Contains(FolderPath)) Then
                                     SubFolders.Add(FolderPath)
                                 End If
                             End If
