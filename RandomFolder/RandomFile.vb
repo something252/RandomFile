@@ -1244,9 +1244,9 @@ Goto112512:
             TopRollsGroupBox.Visible = True
             ' original variable is defined in shown event instead of right here
             TopRollsGroupBox.Anchor = AnchorStyles.Left Or AnchorStyles.Top
-            Me.MinimumSize = New Size(1211, Me.Size.Height)
+            Me.MinimumSize = New Size(1200, Me.Size.Height)
             Me.MaximumSize = New Size(1600, Me.Size.Height)
-            Me.Size = New Size(1211, Me.Size.Height)
+            Me.Size = New Size(1200, Me.Size.Height)
             TopRollsGroupBox.Anchor = AnchorStyles.Left Or AnchorStyles.Right
             If Not IsNothing(My.Settings.TopRollsExpandSize) AndAlso Not (My.Settings.TopRollsExpandSize.Width = 0 AndAlso My.Settings.TopRollsExpandSize.Height = 0) Then
                 Me.Size = My.Settings.TopRollsExpandSize
@@ -1256,12 +1256,12 @@ Goto112512:
         Else
             My.Settings.TopRollsExpandButton = False
             TopRollsGroupBox.Visible = False
-            If Me.Size.Width > 695 Then
+            If Me.Size.Width > 685 Then
                 My.Settings.TopRollsExpandSize = Me.Size
             End If
             Me.Size = TopRollsExpandButton_original
-            Me.MinimumSize = New Size(695, Me.Size.Height)
-            Me.MaximumSize = New Size(695, Me.Size.Height)
+            Me.MinimumSize = New Size(685, Me.Size.Height)
+            Me.MaximumSize = New Size(685, Me.Size.Height)
             TopRollsGroupBox.Anchor = AnchorStyles.Left Or AnchorStyles.Top
             TopRollsExpandButton.Text = ">"
             TopRollsExpandButton_toggle = True

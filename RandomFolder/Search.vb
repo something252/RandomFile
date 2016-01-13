@@ -1506,7 +1506,7 @@ continueForFindNode1:  ' continue for
                         .SearchTextBox.Text = ""
                         .SearchTextBox_TextChanged_Lock = False
                         .DisplayDirectory(Path) ' hides this search
-                        '.ResetSearchText() ' refresh search box text
+                        .ResetSearchText() ' refresh search box text
                     End With
                 End If
             End If

@@ -167,7 +167,7 @@ Partial Class Search
         '
         Me.ExtensionsCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.ExtensionsCheckBox.AutoSize = True
-        Me.ExtensionsCheckBox.Location = New System.Drawing.Point(7, 20)
+        Me.ExtensionsCheckBox.Location = New System.Drawing.Point(10, 20)
         Me.ExtensionsCheckBox.Name = "ExtensionsCheckBox"
         Me.ExtensionsCheckBox.Size = New System.Drawing.Size(122, 17)
         Me.ExtensionsCheckBox.TabIndex = 3
@@ -254,7 +254,7 @@ Partial Class Search
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProgressBar1.Location = New System.Drawing.Point(276, 0)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(755, 18)
+        Me.ProgressBar1.Size = New System.Drawing.Size(761, 18)
         Me.ProgressBar1.TabIndex = 16
         Me.ProgressBar1.Visible = False
         '
@@ -262,7 +262,7 @@ Partial Class Search
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(1104, 2)
+        Me.Label3.Location = New System.Drawing.Point(1110, 2)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(127, 13)
         Me.Label3.TabIndex = 15
@@ -271,7 +271,7 @@ Partial Class Search
         'BreakButton
         '
         Me.BreakButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.BreakButton.Location = New System.Drawing.Point(1240, -3)
+        Me.BreakButton.Location = New System.Drawing.Point(1243, -3)
         Me.BreakButton.Name = "BreakButton"
         Me.BreakButton.Size = New System.Drawing.Size(68, 23)
         Me.BreakButton.TabIndex = 14
@@ -283,7 +283,7 @@ Partial Class Search
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, -7)
+        Me.Label2.Location = New System.Drawing.Point(14, -7)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
         Me.Label2.TabIndex = 13
@@ -294,7 +294,7 @@ Partial Class Search
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, -34)
+        Me.Label1.Location = New System.Drawing.Point(10, -34)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 13)
         Me.Label1.TabIndex = 12
@@ -304,7 +304,7 @@ Partial Class Search
         'TextBox2
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.TextBox2.Location = New System.Drawing.Point(78, -10)
+        Me.TextBox2.Location = New System.Drawing.Point(81, -10)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(495, 20)
         Me.TextBox2.TabIndex = 11
@@ -313,7 +313,7 @@ Partial Class Search
         'TextBox1
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.TextBox1.Location = New System.Drawing.Point(78, -37)
+        Me.TextBox1.Location = New System.Drawing.Point(81, -37)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(495, 20)
         Me.TextBox1.TabIndex = 10
@@ -324,7 +324,7 @@ Partial Class Search
         Me.SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.SearchTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SearchTextBox.ForeColor = System.Drawing.Color.DarkGray
-        Me.SearchTextBox.Location = New System.Drawing.Point(1037, 18)
+        Me.SearchTextBox.Location = New System.Drawing.Point(1043, 18)
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(260, 21)
         Me.SearchTextBox.TabIndex = 9
@@ -359,7 +359,7 @@ Partial Class Search
         Me.AddressTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddressTextBox.Location = New System.Drawing.Point(276, 18)
         Me.AddressTextBox.Name = "AddressTextBox"
-        Me.AddressTextBox.Size = New System.Drawing.Size(755, 21)
+        Me.AddressTextBox.Size = New System.Drawing.Size(761, 21)
         Me.AddressTextBox.TabIndex = 6
         Me.AddressTextBox.Text = "Computer"
         '

@@ -407,7 +407,7 @@ Partial Class ParentFolders
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox1.TabIndex = 35
-        Me.ToolTip1.SetToolTip(Me.ComboBox1, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox1, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label31
@@ -420,7 +420,7 @@ Partial Class ParentFolders
         Me.Label31.Size = New System.Drawing.Size(33, 16)
         Me.Label31.TabIndex = 34
         Me.Label31.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label31, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label31, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse1
@@ -505,7 +505,7 @@ Partial Class ParentFolders
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox2.TabIndex = 36
-        Me.ToolTip1.SetToolTip(Me.ComboBox2, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox2, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label32
@@ -517,7 +517,7 @@ Partial Class ParentFolders
         Me.Label32.Size = New System.Drawing.Size(33, 16)
         Me.Label32.TabIndex = 35
         Me.Label32.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label32, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label32, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse2
@@ -597,7 +597,7 @@ Partial Class ParentFolders
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox3.TabIndex = 37
-        Me.ToolTip1.SetToolTip(Me.ComboBox3, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox3, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label33
@@ -609,7 +609,7 @@ Partial Class ParentFolders
         Me.Label33.Size = New System.Drawing.Size(33, 16)
         Me.Label33.TabIndex = 36
         Me.Label33.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label33, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label33, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse3
@@ -687,7 +687,7 @@ Partial Class ParentFolders
         Me.Label34.Size = New System.Drawing.Size(33, 16)
         Me.Label34.TabIndex = 37
         Me.Label34.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label34, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label34, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox4
@@ -701,7 +701,7 @@ Partial Class ParentFolders
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox4.TabIndex = 40
-        Me.ToolTip1.SetToolTip(Me.ComboBox4, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox4, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse4
@@ -779,7 +779,7 @@ Partial Class ParentFolders
         Me.Label35.Size = New System.Drawing.Size(33, 16)
         Me.Label35.TabIndex = 37
         Me.Label35.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label35, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label35, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox5
@@ -793,7 +793,7 @@ Partial Class ParentFolders
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox5.TabIndex = 43
-        Me.ToolTip1.SetToolTip(Me.ComboBox5, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox5, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse5
@@ -871,7 +871,7 @@ Partial Class ParentFolders
         Me.Label36.Size = New System.Drawing.Size(33, 16)
         Me.Label36.TabIndex = 38
         Me.Label36.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label36, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label36, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox6
@@ -885,7 +885,7 @@ Partial Class ParentFolders
         Me.ComboBox6.Name = "ComboBox6"
         Me.ComboBox6.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox6.TabIndex = 46
-        Me.ToolTip1.SetToolTip(Me.ComboBox6, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox6, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse6
@@ -963,7 +963,7 @@ Partial Class ParentFolders
         Me.Label37.Size = New System.Drawing.Size(33, 16)
         Me.Label37.TabIndex = 39
         Me.Label37.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label37, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label37, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox7
@@ -977,7 +977,7 @@ Partial Class ParentFolders
         Me.ComboBox7.Name = "ComboBox7"
         Me.ComboBox7.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox7.TabIndex = 49
-        Me.ToolTip1.SetToolTip(Me.ComboBox7, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox7, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse7
@@ -1055,7 +1055,7 @@ Partial Class ParentFolders
         Me.Label38.Size = New System.Drawing.Size(33, 16)
         Me.Label38.TabIndex = 40
         Me.Label38.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label38, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label38, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox8
@@ -1069,7 +1069,7 @@ Partial Class ParentFolders
         Me.ComboBox8.Name = "ComboBox8"
         Me.ComboBox8.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox8.TabIndex = 52
-        Me.ToolTip1.SetToolTip(Me.ComboBox8, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox8, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse8
@@ -1147,7 +1147,7 @@ Partial Class ParentFolders
         Me.Label39.Size = New System.Drawing.Size(33, 16)
         Me.Label39.TabIndex = 41
         Me.Label39.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label39, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label39, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox9
@@ -1161,7 +1161,7 @@ Partial Class ParentFolders
         Me.ComboBox9.Name = "ComboBox9"
         Me.ComboBox9.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox9.TabIndex = 55
-        Me.ToolTip1.SetToolTip(Me.ComboBox9, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox9, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse9
@@ -1239,7 +1239,7 @@ Partial Class ParentFolders
         Me.Label40.Size = New System.Drawing.Size(33, 16)
         Me.Label40.TabIndex = 42
         Me.Label40.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label40, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label40, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox10
@@ -1253,7 +1253,7 @@ Partial Class ParentFolders
         Me.ComboBox10.Name = "ComboBox10"
         Me.ComboBox10.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox10.TabIndex = 58
-        Me.ToolTip1.SetToolTip(Me.ComboBox10, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox10, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse10
@@ -1331,7 +1331,7 @@ Partial Class ParentFolders
         Me.Label41.Size = New System.Drawing.Size(33, 16)
         Me.Label41.TabIndex = 43
         Me.Label41.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label41, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label41, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox11
@@ -1345,7 +1345,7 @@ Partial Class ParentFolders
         Me.ComboBox11.Name = "ComboBox11"
         Me.ComboBox11.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox11.TabIndex = 61
-        Me.ToolTip1.SetToolTip(Me.ComboBox11, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox11, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse11
@@ -1423,7 +1423,7 @@ Partial Class ParentFolders
         Me.Label42.Size = New System.Drawing.Size(33, 16)
         Me.Label42.TabIndex = 43
         Me.Label42.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label42, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label42, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'ComboBox12
@@ -1437,7 +1437,7 @@ Partial Class ParentFolders
         Me.ComboBox12.Name = "ComboBox12"
         Me.ComboBox12.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox12.TabIndex = 64
-        Me.ToolTip1.SetToolTip(Me.ComboBox12, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox12, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Browse12
@@ -1517,7 +1517,7 @@ Partial Class ParentFolders
         Me.ComboBox13.Name = "ComboBox13"
         Me.ComboBox13.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox13.TabIndex = 65
-        Me.ToolTip1.SetToolTip(Me.ComboBox13, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox13, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label43
@@ -1529,7 +1529,7 @@ Partial Class ParentFolders
         Me.Label43.Size = New System.Drawing.Size(33, 16)
         Me.Label43.TabIndex = 44
         Me.Label43.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label43, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label43, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse13
@@ -1609,7 +1609,7 @@ Partial Class ParentFolders
         Me.ComboBox14.Name = "ComboBox14"
         Me.ComboBox14.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox14.TabIndex = 66
-        Me.ToolTip1.SetToolTip(Me.ComboBox14, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox14, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label44
@@ -1621,7 +1621,7 @@ Partial Class ParentFolders
         Me.Label44.Size = New System.Drawing.Size(33, 16)
         Me.Label44.TabIndex = 45
         Me.Label44.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label44, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label44, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse14
@@ -1701,7 +1701,7 @@ Partial Class ParentFolders
         Me.ComboBox15.Name = "ComboBox15"
         Me.ComboBox15.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox15.TabIndex = 65
-        Me.ToolTip1.SetToolTip(Me.ComboBox15, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox15, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label45
@@ -1713,7 +1713,7 @@ Partial Class ParentFolders
         Me.Label45.Size = New System.Drawing.Size(33, 16)
         Me.Label45.TabIndex = 46
         Me.Label45.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label45, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label45, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse15
@@ -1793,7 +1793,7 @@ Partial Class ParentFolders
         Me.ComboBox16.Name = "ComboBox16"
         Me.ComboBox16.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox16.TabIndex = 66
-        Me.ToolTip1.SetToolTip(Me.ComboBox16, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox16, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label46
@@ -1805,7 +1805,7 @@ Partial Class ParentFolders
         Me.Label46.Size = New System.Drawing.Size(33, 16)
         Me.Label46.TabIndex = 47
         Me.Label46.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label46, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label46, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse16
@@ -1885,7 +1885,7 @@ Partial Class ParentFolders
         Me.ComboBox17.Name = "ComboBox17"
         Me.ComboBox17.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox17.TabIndex = 67
-        Me.ToolTip1.SetToolTip(Me.ComboBox17, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox17, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label47
@@ -1897,7 +1897,7 @@ Partial Class ParentFolders
         Me.Label47.Size = New System.Drawing.Size(33, 16)
         Me.Label47.TabIndex = 48
         Me.Label47.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label47, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label47, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse17
@@ -1977,7 +1977,7 @@ Partial Class ParentFolders
         Me.ComboBox18.Name = "ComboBox18"
         Me.ComboBox18.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox18.TabIndex = 68
-        Me.ToolTip1.SetToolTip(Me.ComboBox18, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox18, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label48
@@ -1989,7 +1989,7 @@ Partial Class ParentFolders
         Me.Label48.Size = New System.Drawing.Size(33, 16)
         Me.Label48.TabIndex = 49
         Me.Label48.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label48, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label48, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse18
@@ -2069,7 +2069,7 @@ Partial Class ParentFolders
         Me.ComboBox19.Name = "ComboBox19"
         Me.ComboBox19.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox19.TabIndex = 69
-        Me.ToolTip1.SetToolTip(Me.ComboBox19, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox19, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label49
@@ -2081,7 +2081,7 @@ Partial Class ParentFolders
         Me.Label49.Size = New System.Drawing.Size(33, 16)
         Me.Label49.TabIndex = 50
         Me.Label49.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label49, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label49, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse19
@@ -2161,7 +2161,7 @@ Partial Class ParentFolders
         Me.ComboBox20.Name = "ComboBox20"
         Me.ComboBox20.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox20.TabIndex = 65
-        Me.ToolTip1.SetToolTip(Me.ComboBox20, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox20, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label50
@@ -2173,7 +2173,7 @@ Partial Class ParentFolders
         Me.Label50.Size = New System.Drawing.Size(33, 16)
         Me.Label50.TabIndex = 51
         Me.Label50.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label50, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label50, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse20
@@ -2253,7 +2253,7 @@ Partial Class ParentFolders
         Me.ComboBox21.Name = "ComboBox21"
         Me.ComboBox21.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox21.TabIndex = 66
-        Me.ToolTip1.SetToolTip(Me.ComboBox21, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox21, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label51
@@ -2265,7 +2265,7 @@ Partial Class ParentFolders
         Me.Label51.Size = New System.Drawing.Size(33, 16)
         Me.Label51.TabIndex = 52
         Me.Label51.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label51, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label51, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse21
@@ -2345,7 +2345,7 @@ Partial Class ParentFolders
         Me.ComboBox22.Name = "ComboBox22"
         Me.ComboBox22.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox22.TabIndex = 67
-        Me.ToolTip1.SetToolTip(Me.ComboBox22, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox22, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label52
@@ -2357,7 +2357,7 @@ Partial Class ParentFolders
         Me.Label52.Size = New System.Drawing.Size(33, 16)
         Me.Label52.TabIndex = 53
         Me.Label52.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label52, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label52, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse22
@@ -2437,7 +2437,7 @@ Partial Class ParentFolders
         Me.ComboBox23.Name = "ComboBox23"
         Me.ComboBox23.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox23.TabIndex = 68
-        Me.ToolTip1.SetToolTip(Me.ComboBox23, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox23, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label53
@@ -2449,7 +2449,7 @@ Partial Class ParentFolders
         Me.Label53.Size = New System.Drawing.Size(33, 16)
         Me.Label53.TabIndex = 54
         Me.Label53.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label53, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label53, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse23
@@ -2529,7 +2529,7 @@ Partial Class ParentFolders
         Me.ComboBox24.Name = "ComboBox24"
         Me.ComboBox24.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox24.TabIndex = 69
-        Me.ToolTip1.SetToolTip(Me.ComboBox24, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox24, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label54
@@ -2541,7 +2541,7 @@ Partial Class ParentFolders
         Me.Label54.Size = New System.Drawing.Size(33, 16)
         Me.Label54.TabIndex = 55
         Me.Label54.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label54, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label54, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse24
@@ -2621,7 +2621,7 @@ Partial Class ParentFolders
         Me.ComboBox25.Name = "ComboBox25"
         Me.ComboBox25.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox25.TabIndex = 65
-        Me.ToolTip1.SetToolTip(Me.ComboBox25, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox25, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label55
@@ -2633,7 +2633,7 @@ Partial Class ParentFolders
         Me.Label55.Size = New System.Drawing.Size(33, 16)
         Me.Label55.TabIndex = 56
         Me.Label55.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label55, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label55, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse25
@@ -2713,7 +2713,7 @@ Partial Class ParentFolders
         Me.ComboBox26.Name = "ComboBox26"
         Me.ComboBox26.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox26.TabIndex = 66
-        Me.ToolTip1.SetToolTip(Me.ComboBox26, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox26, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label56
@@ -2725,7 +2725,7 @@ Partial Class ParentFolders
         Me.Label56.Size = New System.Drawing.Size(33, 16)
         Me.Label56.TabIndex = 57
         Me.Label56.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label56, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label56, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse26
@@ -2805,7 +2805,7 @@ Partial Class ParentFolders
         Me.ComboBox27.Name = "ComboBox27"
         Me.ComboBox27.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox27.TabIndex = 67
-        Me.ToolTip1.SetToolTip(Me.ComboBox27, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox27, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label57
@@ -2817,7 +2817,7 @@ Partial Class ParentFolders
         Me.Label57.Size = New System.Drawing.Size(33, 16)
         Me.Label57.TabIndex = 58
         Me.Label57.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label57, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label57, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse27
@@ -2897,7 +2897,7 @@ Partial Class ParentFolders
         Me.ComboBox28.Name = "ComboBox28"
         Me.ComboBox28.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox28.TabIndex = 67
-        Me.ToolTip1.SetToolTip(Me.ComboBox28, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox28, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label58
@@ -2909,7 +2909,7 @@ Partial Class ParentFolders
         Me.Label58.Size = New System.Drawing.Size(33, 16)
         Me.Label58.TabIndex = 59
         Me.Label58.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label58, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label58, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse28
@@ -2989,7 +2989,7 @@ Partial Class ParentFolders
         Me.ComboBox29.Name = "ComboBox29"
         Me.ComboBox29.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox29.TabIndex = 66
-        Me.ToolTip1.SetToolTip(Me.ComboBox29, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox29, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label59
@@ -3001,7 +3001,7 @@ Partial Class ParentFolders
         Me.Label59.Size = New System.Drawing.Size(33, 16)
         Me.Label59.TabIndex = 60
         Me.Label59.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label59, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label59, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse29
@@ -3081,7 +3081,7 @@ Partial Class ParentFolders
         Me.ComboBox30.Name = "ComboBox30"
         Me.ComboBox30.Size = New System.Drawing.Size(40, 24)
         Me.ComboBox30.TabIndex = 67
-        Me.ToolTip1.SetToolTip(Me.ComboBox30, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.ComboBox30, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'Label60
@@ -3093,7 +3093,7 @@ Partial Class ParentFolders
         Me.Label60.Size = New System.Drawing.Size(33, 16)
         Me.Label60.TabIndex = 61
         Me.Label60.Text = "0 %"
-        Me.ToolTip1.SetToolTip(Me.Label60, "Percent chance for respective row, or group if applicable, to be rolled based on " & _
+        Me.ToolTip1.SetToolTip(Me.Label60, "Percent chance for respective row, or group if applicable, to be rolled based on " &
         "its weight")
         '
         'Browse30
@@ -3166,7 +3166,7 @@ Partial Class ParentFolders
         Me.Label62.Size = New System.Drawing.Size(54, 20)
         Me.Label62.TabIndex = 33
         Me.Label62.Text = "Group"
-        Me.ToolTip1.SetToolTip(Me.Label62, "Directories part of the same group all act as one directory with all contents and" & _
+        Me.ToolTip1.SetToolTip(Me.Label62, "Directories part of the same group all act as one directory with all contents and" &
         " weights being considered as one")
         '
         'NumberTopLabel
@@ -3342,7 +3342,7 @@ Partial Class ParentFolders
         Me.ActiveSaveLabel.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ActiveSaveLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ActiveSaveLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ActiveSaveLabel.Location = New System.Drawing.Point(461, 9)
+        Me.ActiveSaveLabel.Location = New System.Drawing.Point(490, 9)
         Me.ActiveSaveLabel.Name = "ActiveSaveLabel"
         Me.ActiveSaveLabel.Size = New System.Drawing.Size(17, 18)
         Me.ActiveSaveLabel.TabIndex = 43
@@ -3385,8 +3385,8 @@ Partial Class ParentFolders
         Me.Controls.Add(Me.TopLabelsGroupBox)
         Me.Controls.Add(Me.GroupBox31)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(558, 1000)
-        Me.MinimumSize = New System.Drawing.Size(558, 39)
+        Me.MaximumSize = New System.Drawing.Size(550, 1000)
+        Me.MinimumSize = New System.Drawing.Size(550, 39)
         Me.Name = "ParentFolders"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.FlowLayoutPanel1.ResumeLayout(False)

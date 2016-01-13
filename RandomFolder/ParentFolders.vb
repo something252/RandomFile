@@ -791,7 +791,6 @@
                             If Me.DisabledLine(i) = False AndAlso Not Me.Directories(i).Text = "" AndAlso Not tempGroupInfo(k).currentGroupTotal = 0 AndAlso _
                                 Not tempGroupInfo(k).currentGroupTotal = 0 AndAlso Weights(i).Enabled = True Then
                                 WeightsDisplay(i).Text = CStr(Math.Round((CDec(tempGroupInfo(k).currentGroupTotal) / total) * 100, 1)) & "%"
-                                'Debugger.Break()
                             Else
                                 WeightsDisplay(i).Text = "0%"
                             End If
@@ -806,15 +805,20 @@
                 If tmp = "" Then
                     If Not Weights(i).Value = 0 AndAlso Me.DisabledLine(i) = False AndAlso Not total = 0 AndAlso Weights(i).Enabled = True Then
                         WeightsDisplay(i).Text = CStr(Math.Round((Weights(i).Value / total) * 100, 1)) & "%"
-                        'Debugger.Break()
                     Else
                         WeightsDisplay(i).Text = "0%"
                     End If
                 End If
             Next
 
+            For i As Integer = 0 To Me.Directories.Count - 1
+                If Me.DisabledLine(i) = True Then
+                    WeightsDisplay(i).Text = "0%"
+                End If
+            Next
+
             InternallyChanging = False ' unset
-        End If
+            End If
     End Sub
 
     Structure GroupWeightDisplay

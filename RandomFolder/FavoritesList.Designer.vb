@@ -35,10 +35,11 @@ Partial Class FavoritesList
         'ListBox1
         '
         Me.ListBox1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(22, 24)
+        Me.ListBox1.Location = New System.Drawing.Point(0, 0)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(115, 95)
+        Me.ListBox1.Size = New System.Drawing.Size(602, 737)
         Me.ListBox1.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -79,8 +80,8 @@ Partial Class FavoritesList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(602, 737)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.ListBox1Names)
+        Me.Controls.Add(Me.ListBox1)
         Me.Name = "FavoritesList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Favorites List"

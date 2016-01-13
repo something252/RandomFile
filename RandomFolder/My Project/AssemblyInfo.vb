@@ -13,8 +13,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Random File")> 
 <Assembly: AssemblyDescription("Randomly roll for files and folders in user specified directories.")>
 <Assembly: AssemblyCompany("David Plesnarski")>
-<Assembly: AssemblyProduct("Random File")> 
-<Assembly: AssemblyCopyright("Copyright ©  2015")> 
+<Assembly: AssemblyProduct("Random File")>
+<Assembly: AssemblyCopyright("Copyright ©  2016")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
